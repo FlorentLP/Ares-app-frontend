@@ -5,7 +5,7 @@ export default function MyDataTable() {
   const theme = useTheme();
 
   const [page, setPage] = React.useState<number>(0);
-  const [numberOfItemsPerPageList] = React.useState([2, 3, 4]);
+  const [numberOfItemsPerPageList] = React.useState([3, 5, 10]);
   const [itemsPerPage, onItemsPerPageChange] = React.useState(
     numberOfItemsPerPageList[0],
   );
@@ -13,27 +13,27 @@ export default function MyDataTable() {
   const [items] = React.useState([
     {
       key: 1,
-      name: "Cupcake",
-      calories: 356,
-      fat: 16,
+      name: "Cold shower",
+      edit: 356,
+      delete: 16,
     },
     {
       key: 2,
-      name: "Eclair",
-      calories: 262,
-      fat: 16,
+      name: "Programming",
+      edit: 262,
+      delete: 16,
     },
     {
       key: 3,
-      name: "Frozen yogurt",
-      calories: 159,
-      fat: 6,
+      name: "Walk 10 000 steps",
+      edit: 159,
+      delete: 6,
     },
     {
       key: 4,
-      name: "Gingerbread",
-      calories: 305,
-      fat: 3.7,
+      name: "Hit the gym",
+      edit: 305,
+      delete: 3.7,
     },
   ]);
 
@@ -47,16 +47,16 @@ export default function MyDataTable() {
   return (
     <DataTable>
       <DataTable.Header>
-        <DataTable.Title>Dessert</DataTable.Title>
-        <DataTable.Title numeric>Calories</DataTable.Title>
-        <DataTable.Title numeric>Fat</DataTable.Title>
+        <DataTable.Title>Name</DataTable.Title>
+        <DataTable.Title numeric>Edit</DataTable.Title>
+        <DataTable.Title numeric>Delete</DataTable.Title>
       </DataTable.Header>
 
       {items.slice(from, to).map((item) => (
         <DataTable.Row key={item.key}>
           <DataTable.Cell>{item.name}</DataTable.Cell>
-          <DataTable.Cell numeric>{item.calories}</DataTable.Cell>
-          <DataTable.Cell numeric>{item.fat}</DataTable.Cell>
+          <DataTable.Cell numeric>{item.edit}</DataTable.Cell>
+          <DataTable.Cell numeric>{item.delete}</DataTable.Cell>
         </DataTable.Row>
       ))}
 
