@@ -4,7 +4,7 @@ import HabitsScreen from "./HabitsScreen";
 
 const HabitsRoute = () => <HabitsScreen></HabitsScreen>;
 
-const SportRoute = () => <Text>Sport</Text>;
+const TodoRoute = () => <Text>To do</Text>;
 
 const HealthRoute = () => <Text>Settings</Text>;
 
@@ -26,10 +26,14 @@ const HomeScreen = () => {
     {
       key: "habits",
       title: "Habits",
+      focusedIcon: "ruler-square-compass",
+    },
+    {
+      key: "todo",
+      title: "To do",
       focusedIcon: "checkbox-multiple-marked",
       unfocusedIcon: "checkbox-multiple-marked-outline",
     },
-    { key: "sport", title: "Sport", focusedIcon: "weight-lifter" },
     {
       key: "health",
       title: "Health",
@@ -46,7 +50,7 @@ const HomeScreen = () => {
 
   const renderScene = BottomNavigation.SceneMap({
     habits: HabitsRoute,
-    sport: SportRoute,
+    todo: TodoRoute,
     health: HealthRoute,
     data: DataRoute,
   });
